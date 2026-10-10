@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Amazing Race – Family Edition | Clue #3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="race.css" />
+  <script src="race.js"></script>
+</head>
+<body data-tag="coke" data-banner="Clue #3">
+  <main>
+    <section class="host">
+      <img src="images/images5.jpeg" alt="Phil Keoghan pointing the way" />
+      <div>
+        <h2>Roadblock complete!</h2>
+        <p>Now it's time for a road trip. Your next stop is a giant sporting goods store with a few surprises inside.</p>
+        <p class="quote">"Buckle up, racers. You're heading north!"</p>
+      </div>
+    </section>
+
+    <section class="clue-wrap">
+      <button class="envelope" id="envelope" aria-label="Open your clue">
+        <div class="envelope-inner">
+          <div class="half-yellow"></div>
+          <div class="half-red"></div>
+        </div>
+        <div class="envelope-label">Tap to tear open your clue</div>
+      </button>
+
+      <div class="clue-card" id="clueCard">
+        <div class="clue-header"><span class="y">Route</span><span class="r">Info</span></div>
+        <div class="clue-body">
+          <h3>Travel to Scheels in Johnstown!</h3>
+          <p>Make your way to <strong>Scheels</strong> (4755 Ronald Reagan Blvd, Johnstown).</p>
+          <p>Watch the distance tracker below. It updates as you get closer.
+             When you are within <strong>1/10 of a mile</strong>, a button will appear.
+             Tap it to check in and receive your next Detour.</p>
+          <p><strong>Destination:</strong> <span id="targetCoords"></span></p>
+          <a class="map-link" id="mapLink" target="_blank" rel="noopener">&#128205; Open destination in Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tracker">
+      <div class="label">Distance to Destination</div>
+      <div class="distance" id="distance">-- mi</div>
+      <div class="status" id="status">Waiting for your location&hellip;</div>
+      <a class="advance" id="advanceBtn">You've Arrived! Go to Detour #2 &rarr;</a>
+    </section>
+  </main>
+
+  <script>
+    // ===== Leg settings =====
+    const TARGET = { lat: 40.4044873, lon: -104.9795043 }; // Scheels, 4755 Ronald Reagan Blvd, Johnstown
+    const ARRIVAL_RADIUS_MILES = 0.1;
+    const NEXT_LEG_URL = raceLink("movie.html");
+    const UPDATE_INTERVAL_MS = 5000;
+    const SHOW_MAP_LINK = true;   // set false to make teams find it on their own
+    // ========================
+    startClue({ TARGET, ARRIVAL_RADIUS_MILES, NEXT_LEG_URL, UPDATE_INTERVAL_MS, SHOW_MAP_LINK });
+  </script>
+</body>
+</html>

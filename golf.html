@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Amazing Race – Family Edition | Clue #4</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="race.css" />
+  <script src="race.js"></script>
+</head>
+<body data-tag="golf" data-banner="Clue #4">
+  <main>
+    <section class="host">
+      <img src="https://m.media-amazon.com/images/M/MV5BMTg1OTgyNzA1M15BMl5BanBnXkFtZTcwNDA1NDUzOA@@._V1_.jpg" alt="Phil Keoghan, host of The Amazing Race" />
+      <div>
+        <h2>This is the final leg!</h2>
+        <p>You've made it through every Detour and Roadblock. Only one thing stands between you and the finish: the Pit Stop.</p>
+        <p class="quote">"The Pit Stop is waiting. Race to the finish!"</p>
+      </div>
+    </section>
+
+    <section class="clue-wrap">
+      <button class="envelope" id="envelope" aria-label="Open your clue">
+        <div class="envelope-inner">
+          <div class="half-yellow"></div>
+          <div class="half-red"></div>
+        </div>
+        <div class="envelope-label">Tap to tear open your clue</div>
+      </button>
+
+      <div class="clue-card" id="clueCard">
+        <div class="clue-header"><span class="y">Route</span><span class="r">Info</span></div>
+        <div class="clue-body">
+          <h3>Travel to Roosevelt Park!</h3>
+          <p>Make your way to <strong>Roosevelt Park</strong> (700 Longs Peak Ave, Longmont). I'll be waiting for you on the mat.</p>
+          <p>Watch the distance tracker below. It updates as you get closer.
+             When you are within <strong>1/10 of a mile</strong>, a button will appear.
+             Tap it to check in at the Pit Stop.</p>
+          <p><strong>Destination:</strong> <span id="targetCoords"></span></p>
+          <a class="map-link" id="mapLink" target="_blank" rel="noopener">&#128205; Open destination in Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tracker">
+      <div class="label">Distance to Destination</div>
+      <div class="distance" id="distance">-- mi</div>
+      <div class="status" id="status">Waiting for your location&hellip;</div>
+      <a class="advance" id="advanceBtn">You've Arrived! Go to the Pit Stop &rarr;</a>
+    </section>
+  </main>
+
+  <script>
+    // ===== Leg settings =====
+    const TARGET = { lat: 40.1717751, lon: -105.1061827 }; // Roosevelt Park, 700 Longs Peak Ave, Longmont
+    const ARRIVAL_RADIUS_MILES = 0.1;
+    const NEXT_LEG_URL = raceLink("triangle.html");
+    const UPDATE_INTERVAL_MS = 5000;
+    const SHOW_MAP_LINK = true;   // set false to make teams find it on their own
+    // ========================
+    startClue({ TARGET, ARRIVAL_RADIUS_MILES, NEXT_LEG_URL, UPDATE_INTERVAL_MS, SHOW_MAP_LINK });
+  </script>
+</body>
+</html>

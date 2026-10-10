@@ -1,0 +1,367 @@
+/* Shared styles for every page of The Amazing Race – Family Edition. */
+:root {
+  --race-yellow: #ffd200;
+  --race-red: #d71920;
+  --race-black: #111;
+  --paper: #fffdf5;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--race-black);
+  background:
+    repeating-linear-gradient(45deg, rgba(0,0,0,.04) 0 12px, transparent 12px 24px),
+    linear-gradient(180deg, #1b1b1b 0%, #2c2c2c 100%);
+  min-height: 100vh;
+}
+
+/* Tag bar + Jump Code */
+.tag-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.tag-bar .tag-name { color: var(--race-yellow); }
+.jump-btn {
+  font-family: "Oswald", sans-serif;
+  font-size: .95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--race-yellow);
+  background: transparent;
+  border: 2px solid var(--race-yellow);
+  border-radius: 6px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+dialog.jump {
+  width: 90%;
+  max-width: 360px;
+  padding: 0;
+  border: 4px solid var(--race-yellow);
+  border-radius: 12px;
+  background: var(--paper);
+}
+dialog.jump::backdrop { background: rgba(0,0,0,.75); }
+dialog.jump form { padding: 20px; }
+dialog.jump h2 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 6px;
+}
+dialog.jump p { margin: 0 0 12px; }
+.dialog-buttons { display: flex; gap: 10px; justify-content: flex-end; }
+.dialog-buttons button {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 2px solid var(--race-black);
+  background: #fff;
+  cursor: pointer;
+}
+.dialog-buttons button[type="submit"] { background: var(--race-yellow); border-color: var(--race-red); }
+
+header {
+  background: var(--race-black);
+  border-bottom: 6px solid var(--race-yellow);
+  text-align: center;
+  padding: 16px;
+}
+header img.logo { max-width: 320px; width: 80%; height: auto; border-radius: 6px; }
+header .fallback-title {
+  font-family: "Oswald", sans-serif;
+  color: var(--race-yellow);
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.leg-banner {
+  background: var(--race-red);
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  padding: 8px;
+  text-transform: uppercase;
+}
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* Starting Line / Pit Stop hero image */
+.hero {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  border: 4px solid var(--race-yellow);
+  box-shadow: 0 8px 24px rgba(0,0,0,.5);
+  margin-bottom: 24px;
+}
+.big-line {
+  font-family: "Oswald", sans-serif;
+  color: var(--race-yellow);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2.6rem;
+  margin: 0 0 24px;
+}
+
+/* Phil's welcome */
+.host {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: var(--paper);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+}
+.host img {
+  width: 160px;
+  height: 220px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  border: 4px solid var(--race-yellow);
+  flex-shrink: 0;
+}
+.host h2 {
+  font-family: "Oswald", sans-serif;
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+}
+.host p { margin: 0 0 10px; line-height: 1.5; }
+.host .quote { font-style: italic; font-weight: 700; color: var(--race-red); }
+
+/* Route Info clue envelope */
+.clue-wrap { margin-top: 28px; text-align: center; }
+.envelope {
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  max-width: 520px;
+  padding: 0;
+  background: none;
+}
+.envelope-inner {
+  display: flex;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5);
+  transition: transform .2s;
+}
+.envelope:hover .envelope-inner { transform: scale(1.03); }
+.envelope .half-yellow { flex: 1; background: var(--race-yellow); }
+.envelope .half-red { flex: 1; background: var(--race-red); }
+.envelope-label {
+  margin-top: 10px;
+  font-family: "Oswald", sans-serif;
+  color: var(--race-yellow);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.clue-card {
+  display: none;
+  max-width: 620px;
+  margin: 0 auto;
+  background: var(--paper);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5);
+  text-align: left;
+  animation: pop .4s ease-out;
+}
+.clue-card.open { display: block; }
+@keyframes pop { from { transform: scale(.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.clue-card .clue-header {
+  display: flex;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.clue-card .clue-header span { flex: 1; padding: 10px; text-align: center; font-size: 1.3rem; }
+.clue-card .clue-header .y { background: var(--race-yellow); }
+.clue-card .clue-header .r { background: var(--race-red); color: #fff; }
+.clue-card .clue-header .b { background: var(--race-black); color: var(--race-yellow); }
+.clue-card .clue-body { padding: 20px 24px; line-height: 1.6; }
+.clue-card h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.6rem;
+  margin: 0 0 10px;
+}
+.clue-card h4 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  margin: 18px 0 6px;
+}
+.map-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--race-red);
+  font-weight: 700;
+}
+
+/* Detour options */
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 10px 0;
+}
+.option {
+  border: 3px solid var(--race-black);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  background: #fff;
+}
+.option .option-name {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--race-red);
+}
+.option p { margin: 4px 0 0; }
+.book {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+  background: var(--race-yellow);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Distance tracker / code entry panel */
+.tracker {
+  margin-top: 28px;
+  background: var(--race-black);
+  border: 3px solid var(--race-yellow);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+.tracker .label {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--race-yellow);
+}
+.tracker .distance {
+  font-family: "Oswald", sans-serif;
+  font-size: 3.5rem;
+  margin: 6px 0;
+}
+.tracker .status { font-size: .9rem; color: #bbb; min-height: 1.2em; }
+
+.code-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.code-input, #jumpInput {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 14px;
+  border: 3px solid var(--race-yellow);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 280px;
+}
+#jumpInput { max-width: none; margin-bottom: 8px; }
+.code-submit {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  color: #fff;
+  background: var(--race-red);
+  border: 3px solid var(--race-yellow);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.form-msg { min-height: 1.4em; margin-top: 10px; font-weight: 700; }
+.form-msg.bad { color: var(--race-red); }
+.tracker .form-msg.bad { color: #ff6b6b; }
+.form-msg.good { color: var(--race-yellow); }
+
+/* Advance button */
+.advance {
+  display: none;
+  margin: 24px auto 0;
+  padding: 18px 36px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--race-black);
+  background: var(--race-yellow);
+  border: 4px solid var(--race-red);
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  animation: pulse 1.2s infinite;
+}
+.advance.show { display: inline-block; }
+.center { text-align: center; }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,210,0,.7); }
+  50% { box-shadow: 0 0 0 16px rgba(255,210,0,0); }
+}
+
+/* Pit Stop mat */
+.mat {
+  margin: 0 auto 24px;
+  max-width: 520px;
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5);
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2rem;
+}
+.mat span { flex: 1; padding: 22px 8px; text-align: center; }
+.mat .y { background: var(--race-yellow); }
+.mat .r { background: var(--race-red); color: #fff; }
+.journey { list-style: none; padding: 0; margin: 10px 0 0; }
+.journey li { padding: 4px 0; }
+.journey li::before { content: "\2714\FE0E  "; color: var(--race-red); font-weight: 700; }
+
+@media (max-width: 560px) {
+  .host { flex-direction: column; text-align: center; }
+  .tracker .distance { font-size: 2.6rem; }
+  .options { grid-template-columns: 1fr; }
+  .big-line { font-size: 2rem; }
+  .mat { font-size: 1.5rem; }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Amazing Race – Family Edition | Detour #1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="race.css" />
+  <script src="race.js"></script>
+</head>
+<body data-tag="popcorn" data-banner="Detour #1">
+  <main>
+    <section class="host">
+      <img src="images/images6.jpeg" alt="Phil Keoghan handing over a clue" />
+      <div>
+        <h2>You've reached your first Detour!</h2>
+        <p>A <strong>Detour</strong> is a choice between two tasks. Pick one as a team. Each has its pros and cons.</p>
+        <p class="quote">"Coffee or tea? The choice is yours."</p>
+      </div>
+    </section>
+
+    <section class="clue-wrap">
+      <div class="clue-card open">
+        <div class="clue-header"><span class="y">Detour</span></div>
+        <div class="clue-body">
+          <h3>Coffee or Tea</h3>
+          <p>Your team must pick <strong>one</strong> of these two options:</p>
+          <div class="options">
+            <div class="option">
+              <div class="option-name">&#9749; Coffee</div>
+              <p>Order and receive a coffee drink.</p>
+            </div>
+            <div class="option">
+              <div class="option-name">&#127861; Tea</div>
+              <p>Order and receive a tea drink.</p>
+            </div>
+          </div>
+          <h4>To complete this Detour</h4>
+          <p>Text a photo of your drink to the race coordinator. They'll send you a code. Enter it below to get your next clue.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tracker">
+      <div class="label">Enter Your Code</div>
+      <form class="code-form" id="codeForm" autocomplete="off">
+        <input class="code-input" id="codeInput" autocapitalize="none" spellcheck="false" aria-label="Enter Your Code" />
+        <button class="code-submit" type="submit">Check</button>
+      </form>
+      <p class="form-msg" id="codeMsg" role="status"></p>
+      <a class="advance" id="advanceBtn">Get Clue #2 &rarr;</a>
+    </section>
+  </main>
+
+  <script>
+    // ===== Leg settings =====
+    const CODE_HASH = "3e799d20";  // raceHash("...") of the correct code
+    const NEXT_LEG_URL = raceLink("football.html");
+    // ========================
+    startChallenge({ CODE_HASH, NEXT_LEG_URL });
+  </script>
+</body>
+</html>

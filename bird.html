@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Amazing Race – Family Edition | Roadblock #1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="race.css" />
+  <script src="race.js"></script>
+</head>
+<body data-tag="bird" data-banner="Roadblock #1">
+  <main>
+    <section class="host">
+      <img src="images/images6.jpeg" alt="Phil Keoghan handing over a clue" />
+      <div>
+        <h2>You've reached a Roadblock!</h2>
+        <p>A <strong>Roadblock</strong> is a task you can't get around. Finish it to keep racing.</p>
+        <p class="quote">"Who's ready to hit the books?"</p>
+      </div>
+    </section>
+
+    <section class="clue-wrap">
+      <div class="clue-card open">
+        <div class="clue-header"><span class="r">Roadblock</span></div>
+        <div class="clue-body">
+          <h3>Hit the Books</h3>
+          <p>Somewhere in this library are 10 books, each hiding a puzzle piece. Your first book is:</p>
+          <div class="book">&#128214; <em>The Cat in the Hat</em></div>
+          <ol>
+            <li>Find the book.</li>
+            <li>Inside you'll find a puzzle piece and the title of the next book.</li>
+            <li>Repeat until you've recovered all 10 pieces.</li>
+            <li>Put the pieces together. They spell out a word.</li>
+          </ol>
+          <h4>To complete this Roadblock</h4>
+          <p>Text a photo of your solved puzzle to the race coordinator. Then enter the word below to get your next clue.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tracker">
+      <div class="label">Enter the Word</div>
+      <form class="code-form" id="codeForm" autocomplete="off">
+        <input class="code-input" id="codeInput" autocapitalize="none" spellcheck="false" aria-label="Enter the Word" />
+        <button class="code-submit" type="submit">Check</button>
+      </form>
+      <p class="form-msg" id="codeMsg" role="status"></p>
+      <a class="advance" id="advanceBtn">Get Clue #3 &rarr;</a>
+    </section>
+  </main>
+
+  <script>
+    // ===== Leg settings =====
+    const CODE_HASH = "db9ab509";  // raceHash("...") of the correct code
+    const NEXT_LEG_URL = raceLink("coke.html");
+    // ========================
+    startChallenge({ CODE_HASH, NEXT_LEG_URL });
+  </script>
+</body>
+</html>
